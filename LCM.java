@@ -1,26 +1,25 @@
 import java.util.Scanner;
 
 public class LCM {
-    public static int userInput(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number: ");
-        int num = sc.nextInt();
-        return num;
-    }
-    
-    public static void lcm(){
-        int num1 = userInput();
-        int num2 = userInput();
-        int i = 1;
-        int res = 1;
-        if(i < num2 || num2 < num1){
-           while(i % num1 == 0 && i % num2 == 0){
-            res = i;
-           }
-        }
-        System.out.println("LCM: " + res);
-    }
     public static void main(String[] args) {
-        lcm();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first number: ");
+        int first = input.nextInt();
+        System.out.println("Enter second number: ");
+        int second = input.nextInt();
+        int lcm = lcmOfTwoNumbers(first, second);
+        System.out.println("LCM of two numbers: " + lcm);
+        input.close();
+    }
+
+    public static int lcmOfTwoNumbers(int first, int second) {
+        int i = 1;
+        while (true) {
+            int factor = first * i;
+            if (factor % second == 0) {
+                return factor;
+            }
+            i++;
+        }
     }
 }
