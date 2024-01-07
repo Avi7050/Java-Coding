@@ -5,6 +5,7 @@ public class FibonacciSeries {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter number: ");
         int num = sc.nextInt();
+        sc.close();
         return num;
     }
     public static void fibo(int end){
